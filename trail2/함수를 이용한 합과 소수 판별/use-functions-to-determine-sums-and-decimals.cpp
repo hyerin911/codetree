@@ -2,6 +2,9 @@
 using namespace std;
 
 bool isPrime(int n){
+    if(n==1){
+        return false; //예외처리
+    }
     for(int i=2; i<n; i++){
         if(n%i==0){
             return false;
@@ -11,15 +14,8 @@ bool isPrime(int n){
 }
 
 bool sum(int n){
-    int what;
-    if(n>=10){
-        what=(n%10)+(n/10);
-    }
-    else{
-        what=n;
-    }
-
-    if(what%2==0){
+    int digit_sum=(n/100)+((n/10)%10)+(n%10);
+    if(digit_sum%2==0){
         return true;
     }
     return false;
