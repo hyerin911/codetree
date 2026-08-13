@@ -1,22 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int amount;
+int Sum(int n){
+    if(n==0)
+        return 0;
 
-void sum(int N){
-    if(N==0){
-        return;
-    }
-    amount+=N;
-    sum(N-1);
+    return Sum(n-1)+n;
 }
 
-int main() {
-    // Please write your code here.
-    int N;
-    cin>>N;
+int main(){
+    int n;
+    cin>>n;
 
-    sum(N);
-    cout<<amount;
+    cout<<Sum(n)<<'\n';
     return 0;
 }
